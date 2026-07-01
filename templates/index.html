@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+
+<section class="hero-section">
+    <div class="container">
+        <h1>Welcome to Job Tracker</h1>
+        <p1>Job-tracker is a platform meant to make the job seeking easier. With our app you can monitor or track your job applications so that you remember which jobs you applied to.</p1>
+        <div>
+        <a href="/register" class="btn btn-primary me-2">Register</a>
+        <a href="/login" class="btn btn-primary">Login</a>
+        </div>
+    </div>
+</section>
+
+<section class="features-section">
+    <div class="container">
+        <h2 class="section-title">Features</h2>
+        <div class="row g-4">
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="feature-card">
+                    <h5>Track Applications</h5>
+                    <p2>Add, edit and organize every job you've applied to.</p2>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="feature-card">
+                    <h5>Dashboard Overview</h5>
+                    <p2>See your application stats at a glance.</p2>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="feature-card">
+                    <h5>Status Tracking</h5>
+                    <p2>Know exactly where each application stands.</p2>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="feature-card">
+                    <h5>Secure Login</h5>
+                    <p2>Your data is private and protected with authentication.</p2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="how-section">
+    <div class="container">
+        <h2 class="section-title">How It Works</h2>
+        <div class="row g-4">
+            <div class="col-12 col-md-4">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h5>Register an Account</h5>
+                    <p3>Sign up in seconds and get started immediately.</p3>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h5>Add Your Applications</h5>
+                    <p3>Log every job you apply to with all the details.</p3>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h5>Track Your Progress</h5>
+                    <p3>Monitor status until you land the job.</p3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

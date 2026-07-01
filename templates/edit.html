@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Edit Application
+{% endblock %}
+
+{% block main %}
+
+    <form action="{{url_for('edit', id=application.id)}}" method="post">
+        <div class="mb-3">
+            <h2>Company name</h2>
+            <input type="text" autocomplete="off" autofocus class="form-control" name="company" value="{{ application.company }}">
+        </div>
+        <div class="mb-3">
+            <h2>Job title</h2>
+            <input class="form-control" type="text" name="title" value="{{ application.title }}">
+        </div>
+        <div class="mb-3">
+            <h2>Location</h2>
+            <input type="text" autofocus class="form-control" name="location" value="{{ application.location }}">
+        </div>
+        <div class="mb-3">
+            <h2>Date applied</h2> 
+            <input class="form-control" type="date" name="date" placeholder="dd/mm/yyyy" value="{{ application.date }}">
+        </div>
+        <div class="mb-3">
+            <h2>Deadline</h2> 
+            <input class="form-control" type="date" name="deadline" placeholder="dd/mm/yyyy" value="{{ application.deadline }}">
+        </div>
+        <h2>Status</h2>
+        <select class="form-control" name="status" value="{{ application.status }}">
+            <option value="Applied" {{ 'selected' if application.status=='Applied' }}>Applied</option>
+            <option value="Interview"{{ 'selected' if application.status=='Interview' }}>Interview</option>
+            <option value="Offer"{{ 'selected' if application.status=='Offer' }}>Offer</option>
+            <option value="Rejected" {{ 'selected' if application.status=='Rejected' }}>Rejected</option>
+        </select>
+        <div class="mb-3">
+            <h2>Source</h2> 
+            <input class="form-control w-auto" type="text" name="source" value="{{ application.source }}">
+        </div>
+        <div class="mb-3">
+            <h2>Notes</h2> 
+            <textarea class="form-control" type="text" name="notes" rows="3" {{ application.notes }}></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Update</button>
+    </form>
+
+{% endblock %}

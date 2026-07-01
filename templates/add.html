@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Add Application
+{% endblock %}
+
+{% block main %}
+
+    <form action="{{url_for('add')}}" method="post">
+        <div class="mb-3">
+            <h2>Company name</h2>
+            <input type="text" autocomplete="off" autofocus class="form-control" name="company">
+        </div>
+        <div class="mb-3">
+            <h2>Job title</h2>
+            <input class="form-control" type="text" name="title">
+        </div>
+        <div class="mb-3">
+            <h2>Location</h2>
+            <input type="text" autofocus class="form-control" name="location">
+        </div>
+        <div class="mb-3">
+            <h2>Date applied</h2> 
+            <input class="form-control" type="date" name="date" placeholder="dd/mm/yyyy">
+        </div>
+        <div class="mb-3">
+            <h2>Deadline</h2> 
+            <input class="form-control" type="date" name="deadline" placeholder="dd/mm/yyyy">
+        </div>
+        <div class="mb-3">
+        <h2>Status</h2>
+        <select class="form-control" name="status">
+            <option value="Applied">Applied</option>
+            <option value="Interview">Interview</option>
+            <option value="Offer">Offer</option>
+            <option value="Rejected">Rejected</option>
+        </select>
+        </div>
+        <div class="mb-3">
+            <h2>Source</h2> 
+            <input class="form-control w-auto" type="text" name="source">
+        </div>
+        <div class="mb-3">
+            <h2>Notes</h2> 
+            <textarea class="form-control" type="text" name="notes" rows="3"></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Add Application</button>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+<div class="auth-center">
+    <form class="form-container" action="{{ url_for('register') }}" method="post">
+        <h4>Create your account</h4>
+        <h6>Start tracking your job applications today</h6>
+        <div class="mb-3">
+            <input type="text" autocomplete="off" autofocus class="form-control w-auto " name="username" placeholder="Username" required>
+        </div>
+        <div class="mb-3" style="width: fit-content;">
+            <div class="input-group">
+                <input class="form-control w-auto " type="password" id="password" name="password" placeholder="Password" required>
+                <button class="btn btn-outline-secondary" type="button" id="togglePassword" tabindex="-1">
+                    <i class="bi bi-eye" id="eyeIconPassword"></i>
+                </button>
+            </div>
+        </div>
+        <div class="mb-3"> 
+            <div class="input-group" style="width: fit-content;">
+                <input class="form-control w-auto" type="password" id="confirmation" name="confirmation" placeholder="Repeat password"  required>
+                <button class="btn btn-outline-secondary" type="button" id="toggleConfirmation" tabindex="-1">
+                    <i class="bi bi-eye" id="eyeIconConfirmation"></i>
+                </button>
+            </div>
+        </div>
+        <button class="btn btn-primary me-2" type="submit">Register</button>
+    </form>
+</div>
+    <script>
+    function setupToggle(buttonId, inputId, iconId) {
+        document.getElementById(buttonId).addEventListener('click', function () {
+            const input = document.getElementById(inputId);
+            const icon = document.getElementById(iconId);
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.classList.remove('bi-eye');
+                icon.classList.add('bi-eye-slash');
+            } else {
+                input.type = 'password';
+                icon.classList.remove('bi-eye-slash');
+                icon.classList.add('bi-eye');
+            }
+        });
+    }
+
+    setupToggle('togglePassword', 'password', 'eyeIconPassword');
+    setupToggle('toggleConfirmation', 'confirmation', 'eyeIconConfirmation');
+</script>
+
+{% endblock %}
