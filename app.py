@@ -98,6 +98,7 @@ def register():
         # Ensure username doesn't already exist
         try:
             cursor.execute("INSERT INTO users(username, password) VALUES(? ,?)", (username, hashed))
+            conn.commit()
         except:
             flash("Username already exists")
             return redirect(url_for("register"))
